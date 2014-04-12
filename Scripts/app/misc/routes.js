@@ -6,14 +6,7 @@
             .when('/presentations', {
                 templateUrl: '/AngularRoutes/Views/presentations.html',
                 controller: 'PresentationController',
-                reloadOnSearch: false,
-                resolve: {
-                    ready: ['$q', '$timeout', function ($q, $timeout) {
-                        var ready = $q.defer();
-                        $timeout(ready.resolve, 1000);
-                        return ready.promise;
-                    }]
-                }
+                reloadOnSearch: false
             })
             .when('/presentations/:presentationId', {
                 templateUrl: '/AngularRoutes/Views/presentations.html',
@@ -31,7 +24,9 @@
                                 broken.reject(dice);
                             }
                             else {
-                                broken.resolve(dice);
+                                $timeout(function () {
+                                    broken.resolve(dice);
+                                }, 1000);
                             }
                         }, 0);
                         return broken.promise;
@@ -52,14 +47,17 @@
 
         $rootScope.$on('$routeChangeStart', function (sender, args) {
             console.log("Routing to template " + args.templateUrl);
+            $rootScope.loading = true;
         });
 
         $rootScope.$on('$routeChangeSuccess', function (sender, args) {
             console.log("Routed to template " + args.loadedTemplateUrl);
+            $rootScope.loading = false;
         });
 
         $rootScope.$on('$routeChangeError', function (sender, args) {
             console.log("Promises were rejected for " + args.loadedTemplateUrl);
+            $rootScope.loading = false;
         });
 
         $rootScope.$on('$routeUpdate', function (sender, args) {

@@ -10,7 +10,8 @@
 <body>
 <div>
     <div data-ng-include="'Views/navigation.html'"></div>
-    <div data-ng-include="'Views/body.html'"></div>
+    <h1 data-ng-if="loading">LOADING...</h1>
+    <div data-ng-hide="loading" data-ng-include="'Views/body.html'"></div>
 </div>
 <script src="Scripts/app/main.js"></script>
 <script src="Scripts/app/services/titleService.js"></script>
