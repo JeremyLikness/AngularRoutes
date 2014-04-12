@@ -2,20 +2,18 @@
 
     function Controller ($scope, titleService, presentations, $routeParams) {
         var defaultTitle = 'Presentations - JeremyLikness.com';
-        this.$scope = $scope;
 
-        this.titleService = titleService;
         if (angular.isDefined($routeParams.presentationId)) {
-            this.$scope.presentationId = Number($routeParams.presentationId);
-            if (presentations.length > this.$scope.presentationId) {
-                titleService.setTitle(presentations[this.$scope.presentationId].title + " - JeremyLikness.com");
+            $scope.presentationId = Number($routeParams.presentationId);
+            if (presentations.length > $scope.presentationId) {
+                titleService.setTitle(presentations[$scope.presentationId].title + " - JeremyLikness.com");
             }
             else {
                 titleService.setTitle(defaultTitle);
             }
         }
         else {
-            this.$scope.presentationId = -1;
+            $scope.presentationId = -1;
             titleService.setTitle(defaultTitle);
         }
 
