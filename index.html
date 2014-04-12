@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title data-ng-bind="pageTitle"></title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.backbone.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.9/angular.min.js" type="text/javascript" language="JavaScript"></script>
+    <script src="http://code.angularjs.org/1.2.9/angular-route.min.js" type="text/javascript" language="JavaScript"></script>
+</head>
+<body>
+<div>
+    <div data-ng-include="'Views/navigation.html'"></div>
+    <div data-ng-include="'Views/body.html'"></div>
+</div>
+<script src="Scripts/app/main.js"></script>
+<script src="Scripts/app/services/titleService.js"></script>
+<script src="Scripts/app/controllers/navigationController.js"></script>
+<script src="Scripts/app/controllers/presentationController.js"></script>
+<script src="Scripts/app/controllers/publicationController.js"></script>
+<script src="Scripts/data/presentations.js"></script>
+<script src="Scripts/data/publications.js"></script>
+<script src="Scripts/app/misc/routes.js"></script>
+</body>
+</html>

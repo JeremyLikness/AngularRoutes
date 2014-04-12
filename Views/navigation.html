@@ -1,0 +1,7 @@
+<div data-ng-controller="navigationCtrl as ctrl">
+    <ul>
+        <li data-ng-repeat="link in ctrl.links">
+            <a href="" data-ng-click="ctrl.navigate(link)">{{link.title}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,8 @@
+<div data-ng-controller="publicationCtrl as ctrl">
+    <div>Random value: {{ctrl.dice | number}}</div>
+        <div data-ng-repeat="publication in ctrl.publications">
+        <div><b><a data-ng-href="{{publication.link}}" target="_blank">{{publication.title}}</a></b></div>
+        <div>{{publication.description}}</div>
+        <hr/>
+    </div>
+</div>

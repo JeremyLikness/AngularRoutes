@@ -1,0 +1,6 @@
+<div data-ng-repeat="presentation in presentations">
+    <div data-ng-if="presentationId !== $index"><b><a data-ng-href="{{presentation.slideShare}}" target="_blank">{{presentation.title}}</a></b></div>
+    <div data-ng-if="presentationId === $index"><h1><a data-ng-href="{{presentation.slideShare}}" target="_blank">{{presentation.title}}</a></h1></div>
+    <div>{{presentation.description}}</div>
+    <hr/>
+</div>
