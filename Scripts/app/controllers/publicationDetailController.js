@@ -1,7 +1,7 @@
 (function (app) {
 
     function Controller (titleService, publications, $state) {
-        var defaultTitle = 'Publications - JeremyLikness.com';
+        var defaultTitle = $state.data.title; 
 
         this.dice = $state.$current.locals["detail@"].brokenPromise;
 

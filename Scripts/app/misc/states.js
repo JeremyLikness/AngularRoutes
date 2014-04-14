@@ -1,7 +1,12 @@
 (function (app){
 
-    app.config(['$stateProvider', '$locationProvider',
-        function($stateProvider, $locationProvider) {
+    app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
+        function($stateProvider, $locationProvider, $urlRouterProvider) {
+
+        $urlRouterProvider.otherwise(function($injector, $location) {
+            $location.path("/");
+        });
+
         $stateProvider
             .state('presentation', {
                 url: '/presentations/{presentationId:[0-9]*}',
@@ -40,6 +45,9 @@
                     },
                     'detail': {
                         templateUrl: 'Views/publicationdetail.html',
+                        data: {
+                            title: 'Publications - JeremyLikness.com'
+                        },
                         resolve: {
                             brokenPromise: ['$q', '$timeout', function ($q, $timeout) {
                                 var broken = $q.defer();
