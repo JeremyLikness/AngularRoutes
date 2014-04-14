@@ -1,0 +1,11 @@
+<div data-ng-controller="presentationDtlCtrl as ctrl">
+    <hr/>
+    <div data-ng-if="ctrl.presentation">
+        <h1><a data-ng-href="{{ctrl.presentation.slideShare}}" target="_blank">{{ctrl.presentation.title}}</a></h1>
+        <div>{{ctrl.presentation.description}}</div>
+    </div>
+    <div data-ng-if="!!!ctrl.presentation">
+        <h2>Choose a Presentation</h2>
+    </div>
+    <hr/>
+</div>

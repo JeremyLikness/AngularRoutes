@@ -7,20 +7,20 @@
         this.links = [
             {
                 title: 'Presentations',
-                path: 'presentations'
+                path: '/presentations/'
             },
             {
                 title: 'Presentations with Search',
-                path: 'presentations',
+                path: '/presentations/',
                 search: { foo: "bar"}
             },
             {
                 title: 'Windows Runtime',
-                path: 'presentations/1'
+                path: '/presentations/1'
             },
             {
                 title: 'Publications',
-                path: 'publications'
+                path: '/publications/'
             }
         ];
     }

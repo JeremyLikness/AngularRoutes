@@ -1,0 +1,12 @@
+<div data-ng-controller="publicationDtlCtrl as ctrl">
+    <hr/>
+    <div data-ng-if="ctrl.publication">
+        <h1><a data-ng-href="{{ctrl.publication.link}}" target="_blank">{{ctrl.publication.title}}</a></h1>
+        <div>{{ctrl.publication.description}}</div>
+    </div>
+    <div data-ng-if="!!!ctrl.publication">
+        <h2>Choose a Publication</h2>
+    </div>
+    <h3>The magic number is {{ctrl.dice}}</h3>
+    <hr/>
+</div>
