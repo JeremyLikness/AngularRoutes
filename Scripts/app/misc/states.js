@@ -33,6 +33,9 @@
             })
             .state('publication', {
                 url: '/publications/{publicationId:[0-9]*}',
+                data: {
+                    title: 'Publications - JeremyLikness.com'
+                },
                 views: {
                     'list': {
                         templateUrl: 'Views/publicationlist.html',
@@ -45,9 +48,6 @@
                     },
                     'detail': {
                         templateUrl: 'Views/publicationdetail.html',
-                        data: {
-                            title: 'Publications - JeremyLikness.com'
-                        },
                         resolve: {
                             brokenPromise: ['$q', '$timeout', function ($q, $timeout) {
                                 var broken = $q.defer();
